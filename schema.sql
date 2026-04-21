@@ -25,6 +25,6 @@ CREATE TABLE itens_pedido(
     id SERIAL PRIMARY KEY,
     pedido_id INT NOT NULL REFERENCES pedidos(id) ON DELETE CASCADE,
     produto_id INT NOT NULL REFERENCES produtos(id) ON DELETE RESTRICT,
-    quantidade INT NOT NULL CHECK (quantidade > 0)
+    quantidade INT NOT NULL CHECK (quantidade > 0),
     UNIQUE (pedido_id, produto_id)
 );
